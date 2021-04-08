@@ -12,7 +12,15 @@
  *
  */
 function findIndex(array, value) {
-
+  let middle = Math.floor(array.length / 2);
+  while (array[middle] !== value) {
+    if (array[middle] > value) {
+      middle = Math.floor(middle / 2);
+    } else {
+      middle = Math.floor((middle + array.length) / 2);
+    }
+  }
+  return middle;
 }
 
 module.exports = findIndex;
